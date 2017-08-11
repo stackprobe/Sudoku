@@ -7,7 +7,7 @@ REN SampleData\[Japanese-path-name]_0002\0013\[Japanese-path-name]_0001.ods –â‘è
 REN SampleData\[Japanese-path-name]_0002\0012\[Japanese-path-name]_0001.ods –â‘è.ods
 REN SampleData\[Japanese-path-name]_0002\0009\[Japanese-path-name]_0001.ods –â‘è.ods
 REN SampleData\[Japanese-path-name]_0002\0007\[Japanese-path-name]_0001.ods –â‘è.ods
-REN SampleData\[Japanese-path-name]_0002\0002\[Japanese-path-name]_0001.ods –³‘è 1.ods
+REN SampleData\[Japanese-path-name]_0002\0002\[Japanese-path-name]_0001.ods "–³‘è 1.ods"
 REN SampleData\[Japanese-path-name]_0002\0002\[Japanese-path-name]_0001.txt ‚¶‚å‚¢‚ñ‚Æ.txt
 REN SampleData\[Japanese-path-name]_0003 ¢ŠEˆê“ï‚µ‚¢”“Æ
 REN SampleData\[Japanese-path-name]_0002 ©ì
