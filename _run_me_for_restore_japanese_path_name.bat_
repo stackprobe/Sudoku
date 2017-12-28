@@ -51,12 +51,12 @@ REN [Japanese-path-name]_0001\[Japanese-path-name]_0002\[Japanese-path-name]_000
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0001\[Japanese-path-name]_0001.png 問題.png
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0001\[Japanese-path-name]_0001.bat 解析する.bat
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0019 10_03_組み合わせ問題(いろいろx4)
-REN [Japanese-path-name]_0001\[Japanese-path-name]_0018 10_02_組み合わせ問題(x4+不等号)
-REN [Japanese-path-name]_0001\[Japanese-path-name]_0017 10_01_組み合わせ問題(大+中+小)
+REN [Japanese-path-name]_0001\[Japanese-path-name]_0018 "10_02_組み合わせ問題(x4+不等号)"
+REN [Japanese-path-name]_0001\[Japanese-path-name]_0017 "10_01_組み合わせ問題(大+中+小)"
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0016 09_ジョイントナンプレ
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0015 08_不等号ナンプレ
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0014 07_カラーナンプレ
-REN [Japanese-path-name]_0001\[Japanese-path-name]_0013 06_合体ナンプレ(x9+飛び地)
+REN [Japanese-path-name]_0001\[Japanese-path-name]_0013 "06_合体ナンプレ(x9+飛び地)"
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0012 06_合体ナンプレ(x5)
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0011 06_合体ナンプレ(x11)
 REN [Japanese-path-name]_0001\[Japanese-path-name]_0010 06_合体ナンプレ(x105)
