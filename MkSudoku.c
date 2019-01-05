@@ -133,7 +133,7 @@ static int CallSudoku(void)
 	removeFileIfExist(ErrorFile);
 	removeFileIfExist(LoadedDataFile);
 
-	// memo: コマンドラインに "..." が2つ以上あれば START "" /B /WAIT そうれなければ何もいらないっぽい。
+	// memo: コマンドラインに "..." が2つ以上あれば START "" /B /WAIT そうでなければ何もいらないっぽい。
 	// <- 本当か？
 
 	execute_x(xcout("START \"\" /B \"%s\" /TIME-OUT-MONITOR", getSelfFile()));

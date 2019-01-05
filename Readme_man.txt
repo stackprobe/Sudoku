@@ -142,6 +142,11 @@
 　フリーソフト
 
 
+■ソースコード
+
+　https://github.com/stackprobe/Sudoku
+
+
 ■作者への連絡先
 
 　stackprobes@gmail.com
