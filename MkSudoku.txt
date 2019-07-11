@@ -1,70 +1,70 @@
-����������������������
-���@�@�@�@�@�@�@�@�@��
-���@���쐬�c�[���@��
-���@�@�@�@�@�@�@�@�@��
-����������������������
+■■■■■■■■■■■
+■　　　　　　　　　■
+■　問題作成ツール　■
+■　　　　　　　　　■
+■■■■■■■■■■■
 
 ----
-���s�t�@�C����
+実行ファイル名
 
 	MkSudoku.exe
 
 
 ----
-����
+説明
 
-	���̘g������������͂ō쐬������ŁA�K���ȏ����l��z�u���Ă����c�[���ł��B
-	����������ƁAInput.csv �ȊO�̓��̓f�[�^����AInput.csv ��������������c�[���ł��B
+	問題の枠線や条件を自力で作成した上で、適当な初期値を配置してくれるツールです。
+	言い換えると、Input.csv 以外の入力データから、Input.csv を自動生成するツールです。
 
-	�{�v���O������ Sudoku.exe ���Ăяo���܂��B�P�̂ł͓��삵�܂���B
+	本プログラムは Sudoku.exe を呼び出します。単体では動作しません。
 
-	���쐬�v���Z�X�𕡐������Ɏ��s���邱�Ƃ͏o���܂���B
-
-
-----
-�R�}���h���C��
-
-	MkSudoku.exe [/H] �f�[�^�f�B���N�g��
-
-		/H (�ȗ��\)
-
-			���̃I�v�V�������w�肷��ƁA�쐬�������̓�x���オ�邩������܂���B
-
-		�f�[�^�f�B���N�g�� (�K�{)
-
-			Input.csv �ȊO�̓��̓f�[�^��z�u�����f�B���N�g�����w�肵�ĉ������B
-			�쐬���� Input.csv �͂��̃f�B���N�g���ɏ����o����܂��B
-			���� Input.csv ������ꍇ�͏㏑�����܂��B
+	問題作成プロセスを複数同時に実行することは出来ません。
 
 
 ----
-���s��
+コマンドライン
+
+	MkSudoku.exe [/H] データディレクトリ
+
+		/H (省略可能)
+
+			このオプションを指定すると、作成される問題の難度が上がるかもしれません。
+
+		データディレクトリ (必須)
+
+			Input.csv 以外の入力データを配置したディレクトリを指定して下さい。
+			作成した Input.csv はこのディレクトリに書き出されます。
+			既に Input.csv がある場合は上書きします。
+
+
+----
+実行例
 
 	MkSudoku.exe .
 
-	MkSudoku.exe .\�T���v���f�[�^\01_���ʂ̐���\Data
+	MkSudoku.exe .\サンプルデータ\01_普通の数独\Data
 
 	MkSudoku.exe /H C:\Sudoku_Data\0001
 
 
 ----
-���f���@
+中断方法
 
 	MkSudoku.exe /S
 
-		���f����܂Ő��b�`�����|����܂��B
-		���̑O�ɖ������I�����ꍇ�A���f�̗v���͖�������܂��B
+		中断するまで数秒～数分掛かります。
+		その前に問題を作り終えた場合、中断の要求は無視されます。
 
-		/S �I�v�V�����ŋN�������v���Z�X�́u���쐬�v���Z�X�̏I����҂����Ɂv�I�����܂��B
+		/S オプションで起動したプロセスは「問題作成プロセスの終了を待たずに」終了します。
 
-		���쐬�v���Z�X�̋N���� /S �I�v�V�����ł̋N�����قړ����ł������ꍇ�A���f�̗v������������邱�Ƃ�����܂��B
+		問題作成プロセスの起動と /S オプションでの起動がほぼ同時であった場合、中断の要求が無視されることがあります。
 
 	- - -
 
-	���쐬�v���Z�X���m���ɒ�~�����邽�߂ɂ́A�ȉ��̂悤�Ɏ��s���邱�Ƃ��������߂��܂��B
+	問題作成プロセスを確実に停止させるためには、以下のように実行することをおすすめします。
 
-		DO UNTIL ���쐬�v���Z�X�I��
-			MkSudoku.exe /S �����s����B-- �u���b�L���O�E���[�h�Ŏ��s���邱�ƁB
-			�P�`�Q�b�҂B-- CPU�g�p�����オ��Ȃ��悤�ɂ��邽�߁B�҂����Ԃ͓K��
+		DO UNTIL 問題作成プロセス終了
+			MkSudoku.exe /S を実行する。-- ブロッキング・モードで実行すること。
+			１～２秒待つ。-- CPU使用率が上がらないようにするため。待ち時間は適当
 		LOOP
 

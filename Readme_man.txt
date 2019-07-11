@@ -1,155 +1,155 @@
 ===============================================================================
 
-�@���Ɖ�̓v���O�����i�R�}���h���C���Łj
+　数独解析プログラム（コマンドライン版）
 
 ===============================================================================
 
 
-���\�t�g�̊T�v
+■ソフトの概要
 
-�@���Ƃ̖��������R���\�[���A�v���P�[�V�����ł��B
-�@���́E�o�̓f�[�^���ɂb�r�u�`���̃t�@�C�����g�p���܂��B
-�@�Ή����Ă�����͈ȉ��̂Ƃ���ł��B
+　数独の問題を解くコンソールアプリケーションです。
+　入力・出力データ共にＣＳＶ形式のファイルを使用します。
+　対応している問題は以下のとおりです。
 
-�@1. ��ʓI�Ȑ��Ƃ̖��i�X�~�X�j
-�@2. ����Ȃ܂��͏����Ȑ��Ƃ̖��i�S�~�S�A�P�U�~�P�U�A�Q�T�~�Q�T�Ȃǁj
-�@3. �Ίp����ɂ��S�Ă̐������������
-�@4. �u���b�N�������`�ł͂Ȃ����i�����`�A�ό`�A��ђn�j
-�@5. �����E��̏�����������
-�@6. ���̃i���v���i�������̖�肪�d�Ȃ��Ă�����j
-�@7. �J���[�i���v��
-�@8. �s�����i���v��
-�@9. �W���C���g�i���v��
-�@10. ������g�ݍ��킹�����
+　1. 一般的な数独の問題（９×９）
+　2. 巨大なまたは小さな数独の問題（４×４、１６×１６、２５×２５など）
+　3. 対角線上にも全ての数字が揃う問題
+　4. ブロックが正方形ではない問題（長方形、変形、飛び地）
+　5. 偶数・奇数の条件がある問題
+　6. 合体ナンプレ（いくつかの問題が重なっている問題）
+　7. カラーナンプレ
+　8. 不等号ナンプレ
+　9. ジョイントナンプレ
+　10. これらを組み合わせた問題
 
-�@���u���b�N�Ƃ́A�c�Ɖ��̑��ɑS�Ă̐���������Ȃ���΂Ȃ�Ȃ��i�����Ă���`�́j�̈���w���܂��B
-�@�@��ʓI�Ȑ��Ƃ̖��ł́A�X����R�~�R�̗̈�̂��Ƃł��B
+　※ブロックとは、縦と横の他に全ての数字が揃わなければならない（たいてい矩形の）領域を指します。
+　　一般的な数独の問題では、９個ある３×３の領域のことです。
 
-�@�����쐬����c�[�����������Ă��܂��B
-
-
-�������
-
-�@Windows 10
-�@�m�F���Ă��܂��� Windows 7/8/8.1 �ł�������������܂���B
+　問題を作成するツールも同梱しています。
 
 
-���C���X�g�[�����@
+■動作環境
 
-�@�A�[�J�C�u�̒��g�����[�J���f�B�X�N��̔C�ӂ̏ꏊ�ɃR�s�[���ĉ������B
-
-
-���A���C���X�g�[�����@
-
-�@���W�X�g���Ȃǂ͈�؎g���Ă��܂���B
-�@�t�@�C�����폜���邾���ŃA���C���X�g�[���ł��܂��B
+　Windows 10
+　確認していませんが Windows 7/8/8.1 でも動くかもしれません。
 
 
-�����s���@
+■インストール方法
 
-�@Sudoku.exe [/D data-directory] [/O output-file] [/E error-file] [/L loadeddata-file] [/OL]
-
-�@�@data-directory
-
-�@�@�@�f�[�^�f�B���N�g���̃p�X���L�q���܂��B
-�@�@�@���΃p�X�͎��s���̃J�����g�f�B���N�g������̑��΃p�X�ɂȂ�܂��B
-�@�@�@�ȗ������ꍇ�͎��s���̃J�����g�f�B���N�g���ɂȂ�܂��B
-
-�@�@�@���̃f�B���N�g���ɂ͈ȉ��̓��̓t�@�C����u���Ă��������B
-
-�@�@�@�@Frame.csv       �t���[���w��t�@�C��
-�@�@�@�@Square.csv      �X�N�E�F�A�w��t�@�C��
-�@�@�@�@Group.csv       �O���[�v�w��t�@�C��
-�@�@�@�@XInequal.csv    ���������̕s�����w��t�@�C��
-�@�@�@�@YInequal.csv    ���������̕s�����w��t�@�C��
-�@�@�@�@XJoint.csv      ���������̃W���C���g�w��t�@�C��
-�@�@�@�@YJoint.csv      ���������̃W���C���g�w��t�@�C��
-�@�@�@�@Condition.csv   �Z���̏����w��t�@�C��
-�@�@�@�@Relation.csv    �Z���ƃZ���̊֌W�w��t�@�C��
-�@�@�@�@Input.csv       �����l�w��t�@�C��
-
-�@�@�@�����̓t�@�C���͌ʂɏȗ��ł��܂��B�S�Ẵt�@�C������������K�v�͂���܂���B
-�@�@�@�@�Ⴆ�΂X�~�X�̈�ʓI�Ȑ��ƂȂ�A�K�v�ȃt�@�C���� Frame.csv, Input.csv �����ł��B
-
-�@�@�@�����̓t�@�C���̋L�q�ɂ��ẮuFileFormat.txt�v���Q�Ƃ��ĉ������B
-
-�@�@�@����̓I�ȓ��̓f�[�^�ɂ��Ắu�T���v���f�[�^�v�f�B���N�g�����Q�Ƃ��ĉ������B
-
-�@�@output-file
-
-�@�@�@��͌��ʃt�@�C�������w�肵�܂��B
-�@�@�@���΃p�X�͎��s���̃J�����g�f�B���N�g������̑��΃p�X�ɂȂ�܂��B
-�@�@�@�ȗ������ꍇ�̓f�[�^�f�B���N�g����� Output.csv �Ƃ������O�ɂȂ�܂��B
-
-�@�@error-file
-
-�@�@�@�G���[���t�@�C�������w�肵�܂��B
-�@�@�@���΃p�X�͎��s���̃J�����g�f�B���N�g������̑��΃p�X�ɂȂ�܂��B
-�@�@�@�ȗ������ꍇ�̓f�[�^�f�B���N�g����� Error.csv �Ƃ������O�ɂȂ�܂��B
-
-�@�@loadeddata-file
-
-�@�@�@���[�h�f�[�^�t�@�C�������w�肵�܂��B
-�@�@�@���΃p�X�͎��s���̃J�����g�f�B���N�g������̑��΃p�X�ɂȂ�܂��B
-�@�@�@�ȗ������ꍇ�̓f�[�^�f�B���N�g����� LoadedData.csv �Ƃ������O�ɂȂ�܂��B
-
-�@�@/OL �I�v�V����
-
-�@�@�@���̓f�[�^�̓ǂݍ��݂��I��������_�i��͊J�n�̒��O�j�Ń��[�h�f�[�^�t�@�C�����o�͂��܂��B
+　アーカイブの中身をローカルディスク上の任意の場所にコピーして下さい。
 
 
-�@�@���I�v�V�����̏��������ւ��邱�Ƃ͂ł��܂���B
+■アンインストール方法
 
-�@�@���o�̓t�@�C���̓��e�ɂ��ẮuFileFormat.txt�v���Q�Ƃ��ĉ������B
-
-�@�@�������ɖ��L���Ă��Ȃ���ƃt�@�C���͏o�͂��܂���̂ŁA
-�@�@�@�f�[�^�f�B���N�g������s���̃J�����g�f�B���N�g���Ɋ֌W�Ȃ��t�@�C���������Ă���肠��܂���B
+　レジストリなどは一切使っていません。
+　ファイルを削除するだけでアンインストールできます。
 
 
-�����f���@
+■実行方法
 
-�@��͂Ɏ��Ԃ��|����߂��Ă��邽�ߒ��f�������Ƃ����ꍇ�A�ȉ��̃R�}���h�����s���ĉ������B
-�@���s���̉�͂����f����܂��B
+　Sudoku.exe [/D data-directory] [/O output-file] [/E error-file] [/L loadeddata-file] [/OL]
 
-�@�@Sudoku.exe /S
+　　data-directory
+
+　　　データディレクトリのパスを記述します。
+　　　相対パスは実行時のカレントディレクトリからの相対パスになります。
+　　　省略した場合は実行時のカレントディレクトリになります。
+
+　　　このディレクトリには以下の入力ファイルを置いてください。
+
+　　　　Frame.csv       フレーム指定ファイル
+　　　　Square.csv      スクウェア指定ファイル
+　　　　Group.csv       グループ指定ファイル
+　　　　XInequal.csv    水平方向の不等号指定ファイル
+　　　　YInequal.csv    垂直方向の不等号指定ファイル
+　　　　XJoint.csv      水平方向のジョイント指定ファイル
+　　　　YJoint.csv      垂直方向のジョイント指定ファイル
+　　　　Condition.csv   セルの条件指定ファイル
+　　　　Relation.csv    セルとセルの関係指定ファイル
+　　　　Input.csv       初期値指定ファイル
+
+　　　※入力ファイルは個別に省略できます。全てのファイルを準備する必要はありません。
+　　　　例えば９×９の一般的な数独なら、必要なファイルは Frame.csv, Input.csv だけです。
+
+　　　※入力ファイルの記述については「FileFormat.txt」を参照して下さい。
+
+　　　※具体的な入力データについては「サンプルデータ」ディレクトリを参照して下さい。
+
+　　output-file
+
+　　　解析結果ファイル名を指定します。
+　　　相対パスは実行時のカレントディレクトリからの相対パスになります。
+　　　省略した場合はデータディレクトリ上の Output.csv という名前になります。
+
+　　error-file
+
+　　　エラー情報ファイル名を指定します。
+　　　相対パスは実行時のカレントディレクトリからの相対パスになります。
+　　　省略した場合はデータディレクトリ上の Error.csv という名前になります。
+
+　　loadeddata-file
+
+　　　ロードデータファイル名を指定します。
+　　　相対パスは実行時のカレントディレクトリからの相対パスになります。
+　　　省略した場合はデータディレクトリ上の LoadedData.csv という名前になります。
+
+　　/OL オプション
+
+　　　入力データの読み込みが終わった時点（解析開始の直前）でロードデータファイルを出力します。
 
 
-�@����͂̒��f�̓G���[�Ƃ��Ĉ����܂��B
+　　※オプションの順序を入れ替えることはできません。
 
-�@�����f����܂Ő��b�`�����|����܂��B
-�@�@���̑O�ɉ��𔭌��������ʂ̃G���[�ɂȂ����ꍇ�A���f�̗v���͖�������܂��B
+　　※出力ファイルの内容については「FileFormat.txt」を参照して下さい。
 
-�@�� /S �I�v�V�����ŋN�������v���Z�X�́u��̓v���Z�X�̏I����҂����Ɂv�I�����܂��B
-
-�@����̓v���Z�X�̋N���� /S �I�v�V�����ł̋N�����قړ����ł������ꍇ�A���f�̗v������������邱�Ƃ�����܂��B
+　　※ここに明記していない作業ファイルは出力しませんので、
+　　　データディレクトリや実行時のカレントディレクトリに関係ないファイルがあっても問題ありません。
 
 
-�@��̓v���Z�X���m���ɒ�~�����邽�߂ɂ́A�ȉ��̂悤�Ɏ��s���邱�Ƃ��������߂��܂��B
+■中断方法
 
-�@�@DO UNTIL ��̓v���Z�X�I��
-�@�@�@Sudoku.exe /S �����s����B-- �u���b�L���O�E���[�h�Ŏ��s���邱�ƁB
-�@�@�@�P�`�Q�b�҂B-- CPU�g�p�����オ��Ȃ��悤�ɂ��邽�߁B�҂����Ԃ͓K��
-�@�@LOOP
+　解析に時間が掛かり過ぎているため中断したいという場合、以下のコマンドを実行して下さい。
+　実行中の解析が中断されます。
 
-
-�����쐬�c�[��
-
-�@MkSudoku.txt ���Q�Ƃ��ĉ������B
+　　Sudoku.exe /S
 
 
-����舵�����
+　※解析の中断はエラーとして扱います。
 
-�@�t���[�\�t�g
+　※中断するまで数秒～数分掛かります。
+　　その前に解を発見したか別のエラーになった場合、中断の要求は無視されます。
+
+　※ /S オプションで起動したプロセスは「解析プロセスの終了を待たずに」終了します。
+
+　※解析プロセスの起動と /S オプションでの起動がほぼ同時であった場合、中断の要求が無視されることがあります。
 
 
-���\�[�X�R�[�h
+　解析プロセスを確実に停止させるためには、以下のように実行することをおすすめします。
 
-�@https://github.com/stackprobe/Sudoku
+　　DO UNTIL 解析プロセス終了
+　　　Sudoku.exe /S を実行する。-- ブロッキング・モードで実行すること。
+　　　１～２秒待つ。-- CPU使用率が上がらないようにするため。待ち時間は適当
+　　LOOP
 
 
-����҂ւ̘A����
+■問題作成ツール
 
-�@stackprobes@gmail.com
+　MkSudoku.txt を参照して下さい。
 
-�@�o�O��v�]�Ȃǂ��A�����������B
+
+■取り扱い種別
+
+　フリーソフト
+
+
+■ソースコード
+
+　https://github.com/stackprobe/Sudoku
+
+
+■作者への連絡先
+
+　stackprobes@gmail.com
+
+　バグや要望などご連絡ください。
 
