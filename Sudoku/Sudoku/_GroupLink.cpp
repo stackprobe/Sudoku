@@ -2,7 +2,7 @@
 
 GroupLink_t *CreateGroupLink(void)
 {
-	GroupLink_t *i = nb(GroupLink_t);
+	GroupLink_t *i = nb_(GroupLink_t);
 
 	return i;
 }

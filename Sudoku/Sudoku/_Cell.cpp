@@ -2,7 +2,7 @@
 
 Cell_t *CreateCell(void)
 {
-	Cell_t *i = nb(Cell_t);
+	Cell_t *i = nb_(Cell_t);
 
 	i->Conds = new autoList<CellCond_t *>();
 	i->LinkedGroups = new autoList<GroupLink_t *>();

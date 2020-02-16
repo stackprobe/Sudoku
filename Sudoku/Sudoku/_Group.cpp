@@ -2,7 +2,7 @@
 
 Group_t *CreateGroup(void)
 {
-	Group_t *i = nb(Group_t);
+	Group_t *i = nb_(Group_t);
 
 	i->Cells = new autoList<Cell_t *>();
 

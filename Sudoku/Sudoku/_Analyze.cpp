@@ -88,7 +88,7 @@ static void BruteForceSearch(void)
 	{
 		Cell_t *cell = Dc.Cells->GetElement(index);
 
-		cell->BF_KnownPossibles = na(uchar, cell->MaxValue);
+		cell->BF_KnownPossibles = na_(uchar, cell->MaxValue);
 
 		for(int value = 1; value <= cell->MaxValue; value++)
 		{
@@ -164,7 +164,7 @@ void Analyze(void)
 			m_maxim(Dc.MaxValueMax, cell->MaxValue);
 		}
 	}
-	Dc.Possibles = na(int, Dc.MaxValueMax);
+	Dc.Possibles = na_(int, Dc.MaxValueMax);
 
 	int presume = 0;
 

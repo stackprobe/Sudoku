@@ -2,7 +2,7 @@
 
 CellCond_t *CreateCellCond(void)
 {
-	CellCond_t *i = nb(CellCond_t);
+	CellCond_t *i = nb_(CellCond_t);
 
 	return i;
 }
