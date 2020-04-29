@@ -12,4 +12,4 @@ C:\Factory\SubTools\EmbedConfig.exe --factory-dir-disabled out\MkSudoku.exe
 
 C:\Factory\SubTools\zip.exe /O out Sudoku
 
-PAUSE
+IF NOT "%1" == "/-P" PAUSE
