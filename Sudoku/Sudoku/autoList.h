@@ -196,7 +196,7 @@ public:
 		this->AddElements(list->ElementAt(0), list->GetCount());
 	}
 
-	void InsertElements(int insPos, Element_t *list, int count) // fixme: ’x‚¢
+	void InsertElements(int insPos, Element_t *list, int count) // todo: ’x‚¢
 	{
 		for(int index = 0; index < count; index++)
 		{
