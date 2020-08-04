@@ -284,7 +284,7 @@ foundPos:
 
 	if(KPN_IsKnown(x, y, numb))
 	{
-		if(refindCount < 10) // todo: ãŒÀ“K“–
+		if(refindCount < 10) // HACK: ãŒÀ“K“–
 		{
 			refindCount++;
 			goto refindPosNumb;
