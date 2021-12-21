@@ -7,7 +7,7 @@ Sudoku
 ビルド済み配布物
 ----------------
 
-http://stackprobe.dip.jp/Sudoku
+http://stackprobe.ccsp.mydns.jp/Sudoku
 
 
 マニュアル
